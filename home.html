@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Narayana4 Plastics</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            
+            color: white;
+            cursor: none;
+        }
+
+        .cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #4CAF50;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%, -50%);
+        }
+
+        .cursor-follow {
+            width: 40px;
+            height: 40px;
+            background: rgba(76, 175, 80, 0.2);
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9998;
+            transform: translate(-50%, -50%);
+            transition: transform 0.15s ease-out;
+        }
+
+        nav {
+    background: rgba(26, 26, 26, 0.95);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-img {
+    height: 50px;
+    width: auto;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.logo-main {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: white;
+}
+
+.logo-sub {
+    font-size: 0.8rem;
+    color: #cccccc;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            position: relative;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background: rgba(76, 175, 80, 0.1);
+            border-radius: 4px;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #4CAF50;
+            transition: width 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px; /* Height of your navbar */
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 80px 5rem;
+            display: flex;
+            align-items: center;
+        }
+
+      
+        .hero {
+            background-image: url("Section 1.png");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 5rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 50%;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            color: #cccccc;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+
+
+        .who-are-we {
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+            background: #2c2c2c;
+        }
+
+        .who-are-we-content {
+            flex: 1;
+        }
+
+        .who-are-we h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #4CAF50;
+        }
+
+        .who-are-we p {
+            line-height: 1.8;
+            color: #f0f0f0;
+            margin-bottom: 2rem;
+        }
+
+        .who-are-we-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .stats-container {
+            background-color: #1e2e1e;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(76, 175, 80, 0.3);
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+
+        .stat-item {
+            text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stat-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #cccccc;
+        }
+
+        .stat-number-wrapper {
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        .plus-symbol {
+            color: #4CAF50;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .stat-label {
+            color: #cccccc;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .stat-number {
+            animation: countUp 0.5s ease-out forwards;
+        }
+        .cta-button {
+            background: #4CAF50;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            border:2px solid white;
+            border-radius: 50px;
+        }
+
+        .cta-button:hover {
+            background: #23ec2e;
+           
+        }
+        .parallax-section {
+            position: relative;
+            overflow: hidden;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            transform-style: preserve-3d;
+        }
+
+        .services {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
+            padding: 6rem 2rem;
+            text-align: center;
+           
+        }
+
+        .services h2, .products h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #4CAF50;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border:2px dotted #a5eba8;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.2);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 1.5rem;
+            fill: #4CAF50;
+        }
+
+        .service-title {
+            font-size: 1.2rem;
+            color: #4CAF50;
+            margin-bottom: 1rem;
+        }
+
+        .service-description {
+            color: #cccccc;
+            line-height: 1.6;
+        }
+        .products {
+    background: #2c2c2c;
+    padding: 6rem 2rem;
+    overflow: hidden;
+}
+
+.product-carousel {
+    position: relative;
+    overflow: hidden;
+    padding: 2rem 0;
+}
+
+.product-track {
+    display: flex;
+    gap: 2rem;
+    animation: scroll 40s linear infinite;
+}
+
+/* Clone the track for seamless loop */
+.product-track:after {
+    content: "";
+    display: block;
+    width: 2rem; /* Same as gap */
+}
+
+.product-card {
+    flex: 0 0 300px;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-300px * 5 - 10rem)); /* Adjust based on number of cards and gap */
+    }
+}
+
+
+.product-card:hover {
+    transform: translateY(-10px);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-300px * 8)); /* Half of total width */
+    }
+}
+
+
+
+
+
+section {
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    margin: 0;
+    position: relative;
+}
+
+
+/* Footer Styles */
+.footer {
+    background: #1a1a1a;
+    padding: 4rem 2rem 2rem;
+    color: white;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.footer-section {
+    flex: 1;
+}
+
+.footer-section h3 {
+    color: #4CAF50;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-section ul li a {
+    color: #cccccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #4CAF50;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #333;
+}
+
+
+
+
+        /* Parallax and animation effects */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+
+        .scroll-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animated {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            transform-style: preserve-3d;
+            will-change: transform;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    
+        
+    </style>
+</head>
+<body>
+    <div class="cursor"></div>
+    <div class="cursor-follow"></div>
+
+    <nav>
+        <div class="logo-container">
+            <img src="snlogo.png" alt="Logo" class="logo-img">
+            <div class="logo-text">
+                <span class="logo-main">SRI NARAYANAR PLASTICS</span>
+                <span class="logo-sub" style="padding-left: 20px;">Mfrs. Precision Moulded Thermoplastic Components</span>
+            </div>
+        </div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#who-are-we">Who Are We</a>
+            <a href="#services">Services</a>
+            <a href="#products">Products</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section id="home" class="hero parallax">
+        <div class="hero-content">
+            <h1><span id="typed-text"></span></h1>
+            <p>Delivering precision-engineered thermoplastic components tailored to diverse industrial needs.With a focus on quality, customization, and reliability, we provide innovative solutions that meet the demands of various industries. Let us help you bring your vision to life with products crafted for excellence.</p>
+            <a href="#products" class="cta-button">View our products</a>
+        </div>
+    </section>
+        
+    
+
+    <section id="who-are-we" class="who-are-we">
+        <div class="who-are-we-content">
+            <h2>Who are we?</h2>
+            <p>Sri Narayanar Plastics specializes in manufacturing and assembling precision thermoplastic components for a wide range of industries, both domestic and international. With a focus on quality and innovation, we excel in converting wood and metal parts into highly durable and efficient engineering plastic components. With a proven track record of delivering over 1500 unique products, we utilize advanced injection molding technologies, including insert and over-molding, to cater to diverse industrial needs. Our expertise spans the processing of various materials, including LLD, LD, HD, PP, Nylon, GF, ABS, HIPS, and more, ensuring flexibility for custom requirements. Our commitment to precision and customer satisfaction is backed by stringent quality control measures and adherence to industry standards, enabling us to consistently meet “just-in-time delivery” expectations.</p>
+           
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-icon">🏢</div>
+                    <div class="stat-number" data-target="1995">0</div>
+                    <div class="stat-label">Established</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">💼</div>
+                    <div class="stat-number" data-target="29">0</div>
+                    <div class="stat-label">Years of Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">📦</div>
+                    <div class="stat-number-wrapper">
+                        <div class="stat-number" data-target="500">0</div>
+                        <div class="plus-symbol">+</div>
+                    </div>
+                    <div class="stat-label">Products</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-number-wrapper">
+                        <div class="stat-number" data-target="100">0</div>
+                        <div class="plus-symbol">%</div>
+                    </div>
+                    <div class="stat-label">Satisfied<br>Customers</div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="who-are-we-image">
+            <img src="a-3d-render-of-a-sleek-industrial-themed_u1nOf3GzQYOJTd7QDdhIZw_IrLq3ao-QyuBiRBRSQMQOQ.jpeg" alt="Our Factory" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+    </section>
+
+    
+  
+    <section id="services" class="services parallax-section">
+       
+        <h2 class="scroll-reveal" >Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card scroll-reveal">
+                <img class="service-icon" src="wired-outline-35-edit-in-dynamic (1).gif">
+                <h3 class="service-title">Customized Molding Solutions</h3>
+                <p class="service-description">Tailored thermoplastic products to meet specific industry needs.</p>
+            </div>
+            <div class="service-card scroll-reveal">
+                <img class="service-icon" src="wired-outline-12-layers-hover-slide.gif">
+                <h3 class="service-title">Raw Material Expertise</h3>
+                <p class="service-description">Specialized in processing LLD, LD, HD, PP, Nylon, GF, ABS, HIPS, and LCD.</p>
+            </div>
+            <div class="service-card scroll-reveal">
+                <img class="service-icon" src="wired-outline-1383-sphere-hover-pinch.gif">
+                <h3 class="service-title">Diverse Industry Support</h3>
+                <p class="service-description">Serving automotive, construction, electric sectors, and more.</p>
+            </div>
+            <div class="service-card scroll-reveal">
+                <img class="service-icon" src="wired-outline-409-tool-loop-oscillate.gif">
+                <h3 class="service-title">
+                    Precision Injection Molding</h3>
+                <p class="service-description">High-quality, narrow-tolerance components with advanced technologies.</p>
+            </div>
+            <div class="service-card scroll-reveal">
+                <img class="service-icon" src="wired-outline-1754-nails-screw-carpentry-hover-pinch (1).gif">
+                <h3 class="service-title">Tooling and Mold Design</h3>
+                <p class="service-description">Custom mold design services to suit your production and product needs.</p>
+            </div>
+            <div class="service-card scroll-reveal">
+                <img class="service-icon" src="wired-outline-2803-engagement-alt-hover-pinch.gif">
+                <h3 class="service-title">Quality Assurance</h3>
+                <p class="service-description">Strict adherence to quality standards ensuring defect-free components.</p>
+            </div>
+            <!-- Add 5 more service cards following the same pattern -->
+        </div>
+    </section>
+
+    <section id="products" class="products parallax-section">
+        <h2 class="scroll-reveal">Our Products</h2>
+        <div class="product-carousel">
+            <div class="product-track">
+                <!-- First Set -->
+                <div class="product-card">
+                    <img src="WhatsApp_Image_2025-01-12_at_20.25.29_f3722ddb-removebg-preview.png" alt="Product 1" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Precision Components</h3>
+                        <p class="service-description">High-quality thermoplastic components.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="WhatsApp_Image_2025-01-12_at_20.25.29_f3722ddb-removebg-preview.png" alt="Product 1" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Precision Components</h3>
+                        <p class="service-description">High-quality thermoplastic components.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="WhatsApp_Image_2025-01-12_at_20.25.29_f3722ddb-removebg-preview.png" alt="Product 1" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Precision Components</h3>
+                        <p class="service-description">High-quality thermoplastic components.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="WhatsApp_Image_2025-01-12_at_20.25.29_f3722ddb-removebg-preview.png" alt="Product 1" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Precision Components</h3>
+                        <p class="service-description">High-quality thermoplastic components.</p>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="WhatsApp_Image_2025-01-12_at_20.25.29_f3722ddb-removebg-preview.png" alt="Product 1" class="product-image">
+                    <div class="product-info">
+                        <h3 class="product-title">Precision Components</h3>
+                        <p class="service-description">High-quality thermoplastic components.</p>
+                    </div>
+                </div>
+                <!-- Repeat product cards -->
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact parallax-section">
+        <h2 class="section-title">Get in touch with us</h2>
+        
+        <div class="contact-layout">
+            <!-- Illustration -->
+            <div class="contact-illustration">
+                <img src="Contact us-bro (2).png" alt="Contact Illustration">
+            </div>
+    
+            <!-- Form -->
+            <div class="contact-form-container">
+                <form class="contact-form" id="contactForm">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea name="message" placeholder="Type your message" rows="4" required></textarea>
+                    <button type="submit">Submit</button>
+                </form>
+                <div id="message"></div>
+            </div>
+        </div>
+    
+        <!-- Contact Info Box -->
+        <div class="contact-info">
+            <div class="info-card">
+                <img class="info-icon" src="wired-gradient-18-location-pin-in-jump-dynamic.gif" alt="Location">
+                <p>No:34/12, Shanthi Nagar, 2nd street, Adambakkam, Chennai-600 088</p>
+            </div>
+            <div class="info-card">
+                <img class="info-icon" src="wired-gradient-2720-logo-viber-hover-draw.gif" alt="Phone">
+                <p>9444874193, 9710164524</p>
+            </div>
+            <div class="info-card">
+                <img class="info-icon" src="wired-gradient-1141-email-hover-rotation.gif" alt="Email">
+                <p>srinarayanarplastics@gmail.com</p>
+            </div>
+        </div>
+    </section>
+    
+    <style>
+    .contact {
+        padding: 6rem 2rem;
+        background: linear-gradient(rgba(26, 26, 26, 0.9), rgba(26, 26, 26, 0.9));
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+    }
+    
+    .section-title {
+        color: #4CAF50;
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+    
+    .contact-layout {
+        display: flex;
+        max-width: 900px;
+        margin: 0 auto;
+        gap: 4rem;
+        align-items: center;
+    }
+    
+    .contact-illustration {
+        flex: 1;
+        max-width: 1000px;
+    }
+    
+    .contact-illustration img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+    
+    .contact-form-container {
+        flex: 1;
+        background: rgba(44, 44, 44, 0.9);
+        padding: 2rem;
+        border-radius: 15px;
+        border: 1px solid rgba(76, 175, 80, 0.3);
+    }
+    
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .contact-form input,
+    .contact-form textarea {
+        padding: 1rem;
+        border: 1px solid rgba(76, 175, 80, 0.3);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.05);
+        color: white;
+    }
+    
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+        outline: none;
+        border-color: #4CAF50;
+    }
+    
+    .contact-form button {
+        background: #4CAF50;
+        color: white;
+        padding: 1rem;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+    
+    .contact-form button:hover {
+        background: #45a049;
+    }
+    
+    .contact-info {
+        max-width: 1200px;
+        margin: 2rem auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        background: rgba(44, 44, 44, 0.9);
+        padding: 2rem;
+        border-radius: 15px;
+        border: 1px solid rgba(76, 175, 80, 0.3);
+    }
+    
+    .info-card {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.5rem;
+        background: rgba(76, 175, 80, 0.1);
+        border-radius: 8px;
+    }
+    
+    .info-icon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .info-card p {
+        color: white;
+        margin: 0;
+        font-size: 0.9rem;
+    }
+    
+    @media (max-width: 768px) {
+        .contact {
+            padding: 4rem 1rem;
+        }
+    
+        .contact-layout {
+            flex-direction: column;
+        }
+    
+        .contact-illustration {
+            display: none;
+        }
+    
+        .contact-info {
+            grid-template-columns: 1fr;
+        }
+    }
+    </style>
+    
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <ul>
+                    <li><a href="#">LinkedIn</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sri Narayanar Plastics. All rights reserved.</p>
+        </div>
+    </footer>
+
+    
+
+<script>
+    // Cursor follow animation
+const cursor = document.querySelector('.cursor');
+const cursorFollow = document.querySelector('.cursor-follow');
+
+document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+    
+    cursorFollow.style.left = e.clientX + 'px';
+    cursorFollow.style.top = e.clientY + 'px';
+});
+
+// Typing animation
+new Typed('#typed-text', {
+    strings: ['High-Quality Thermoplastic^500\nComponents, Crafted with^500\nPrecision'],
+    typeSpeed: 50,
+    backSpeed: 30,
+    startDelay: 1000,
+    showCursor: true,
+    cursorChar: '|',
+    loop: false
+});
+
+// Combined observer for both counting and scroll reveal animations
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Handle scroll reveal animation
+            if (entry.target.classList.contains('scroll-reveal')) {
+                entry.target.classList.add('revealed');
+            }
+            
+            // Handle number counting animation
+            if (entry.target.classList.contains('stats-container')) {
+                const counters = document.querySelectorAll('.stat-number');
+                counters.forEach(counter => {
+                    const target = parseInt(counter.getAttribute('data-target'));
+                    const duration = 2000;
+                    const steps = 50;
+                    const stepValue = target / steps;
+                    let current = 0;
+
+                    const updateCounter = () => {
+                        current += stepValue;
+                        if (current <= target) {
+                            counter.textContent = Math.round(current);
+                            setTimeout(updateCounter, duration / steps);
+                        } else {
+                            counter.textContent = target;
+                        }
+                    };
+
+                    updateCounter();
+                });
+            }
+        }
+    });
+}, observerOptions);
+
+// Observe all scroll-reveal elements and stats container
+document.querySelectorAll('.scroll-reveal').forEach(element => {
+    observer.observe(element);
+});
+observer.observe(document.querySelector('.stats-container'));
+
+// Parallax scroll effect
+window.addEventListener('scroll', () => {
+            const parallaxElements = document.querySelectorAll('.parallax');
+            parallaxElements.forEach(element => {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * -0.5;
+                element.style.backgroundPosition = `center ${rate}px`;
+            });
+        });
+    
+const productTrack = document.querySelector('.product-track');
+// Clone products for infinite scroll
+const products = document.querySelectorAll('.product-card');
+products.forEach(product => {
+    const clone = product.cloneNode(true);
+    productTrack.appendChild(clone);
+});
+
+// Reset animation when it ends
+productTrack.addEventListener('animationend', () => {
+    productTrack.style.animation = 'none';
+    productTrack.offsetHeight; // Trigger reflow
+    productTrack.style.animation = 'scroll 40s linear infinite';
+});
+
+document.getElementById('contactForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = {
+                name: e.target.name.value,
+                email: e.target.email.value,
+                message: e.target.message.value
+            };
+            
+            try {
+                const response = await fetch('http://localhost:5000/submit', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                if (response.ok) {
+                    document.getElementById('message').textContent = 'Form submitted successfully!';
+                    document.getElementById('message').style.color = 'green';
+                    e.target.reset();
+                } else {
+                    throw new Error('Failed to submit');
+                }
+            } catch (error) {
+                document.getElementById('message').textContent = 'Error submitting form';
+                document.getElementById('message').style.color = 'red';
+            }
+        });
+</script>
+</body>
+</html>
